@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 // SECOND APPROACH OF DB HADNLING WITH DB FILE.
 // import express from "express";
 import connectDB from "./db/index.js";
+import app from "./app.js";
 
 //dotenv config.
 dotenv.config({
@@ -13,7 +14,22 @@ dotenv.config({
   path: "../env",
 });
 
-connectDB();
+connectDB()
+.then(()=>{
+  app.on("ERROR",(error)=>{
+    console.log(`Error in root folder index.js :: ${error}`);
+    throw error
+    
+  })
+  app.listen(process.env.PORT || 8000,()=>{
+    console.log(`server is running at PORT ::${process.env.PORT}`);
+    
+  })//if port is not availabel then use 8000.
+})
+.catch((err)=>{
+  console.log("MONGO db connection failed ::",err);
+  
+})
 //const app = express();
 
 //listeners of express.
