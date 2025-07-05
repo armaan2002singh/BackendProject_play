@@ -42,3 +42,23 @@
 2. I can make a Db named folder where i will write the connection name function in it and then import that function into the index.js file and execute that function there.
 
 - but both have pros and cons
+
+# App will be with help of express and DB will be with help of Mongoose.
+
+# Now a there is one more package is called dotenv will required to access the environmental varibles.
+
+- Note, it is important to make sure the errors so always wrap the connection in the error handling with tryCatch or using promises.
+- Database is always in another countinent. so we take time to talk so always use async and await.
+
+### NOTE-->
+
+- will declare a arrow function with this and use async await in it to handle DB
+- one more thing while writng an IFFI "()()" concept coders always use the ";" before the concept for cleaning purpose. --> if someone or you missed to end the previous line code with ";" then it will create a mess so to avoid it coders do this thing.
+
+- one more thing is that aftet connect of the db, name is also required of that db. Which was created in the constants.js file.
+
+## Note --> await Can only be used inside an async function.
+- It pauses the function execution until the promise is resolved or rejected.
+- Makes asynchronous code look and behave like synchronous code, improving readability.
+
+## EXPRESS part in the same index.js file, that will be the listers used in index with express.
