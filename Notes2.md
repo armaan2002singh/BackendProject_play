@@ -12,3 +12,10 @@
 
 - can read from the express's documentary
 - well both are installed into project and can be used after the creation of the app.#### EXPRESS in previous time was not able to get json direclty then coder had to use the body-parser, but now they use -- express.json({})
+
+# Middel ware 
+- is the check of user before doing something is called middleware.
+- there is always a sequence of appling the checkings in middleware
+-(error, req, res, next)
+-Next - if are using the next means we are talking about middleware.
+# Important thing is note.js API error--> from documentary

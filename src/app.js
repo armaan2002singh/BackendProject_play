@@ -19,4 +19,6 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 
 app.use(express.static("public")); // is for sometime we want to store some files and folder then on that time, can access them.
 
+app.use(cookieParser())// can read from documentary.
+
 export default app;
