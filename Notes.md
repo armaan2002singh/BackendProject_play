@@ -53,11 +53,12 @@
 ### NOTE-->
 
 - will declare a arrow function with this and use async await in it to handle DB
-- one more thing while writng an IFFI "()()" concept coders always use the ";" before the concept for cleaning purpose. --> if someone or you missed to end the previous line code with ";" then it will create a mess so to avoid it coders do this thing.
+- one more thing while writng an IIFE "()()" concept coders always use the ";" before the concept for cleaning purpose. --> if someone or you missed to end the previous line code with ";" then it will create a mess so to avoid it coders do this thing.
 
 - one more thing is that aftet connect of the db, name is also required of that db. Which was created in the constants.js file.
 
 ## Note --> await Can only be used inside an async function.
+
 - It pauses the function execution until the promise is resolved or rejected.
 - Makes asynchronous code look and behave like synchronous code, improving readability.
 

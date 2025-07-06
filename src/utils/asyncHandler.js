@@ -10,8 +10,6 @@ export { asyncHandler };
 
 // higher order function - can accept functions as a parameter and can return then. treat them as variable.
 
-
-
 // const asyncHandler = (fn) => async (req, res, next) => {
 //   try {
 //     await fn(req, res, next)

@@ -1,3 +1,5 @@
+//This is a custom response wrapper class for formatting your successful API responses in a consistent and structured way.
+
 class ApiResponse {
   constructor(statusCode, data, message = "Success") {
     this.statusCode = statusCode; // API server statusCode -- TODO

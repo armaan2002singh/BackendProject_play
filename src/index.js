@@ -15,21 +15,18 @@ dotenv.config({
 });
 
 connectDB()
-.then(()=>{
-  app.on("ERROR",(error)=>{
-    console.log(`Error in root folder index.js :: ${error}`);
-    throw error
-    
+  .then(() => {
+    app.on("ERROR", (error) => {
+      console.log(`Error in root folder index.js :: ${error}`);
+      throw error;
+    });
+    app.listen(process.env.PORT || 8000, () => {
+      console.log(`server is running at PORT ::${process.env.PORT}`);
+    }); //if port is not availabel then use 8000.
   })
-  app.listen(process.env.PORT || 8000,()=>{
-    console.log(`server is running at PORT ::${process.env.PORT}`);
-    
-  })//if port is not availabel then use 8000.
-})
-.catch((err)=>{
-  console.log("MONGO db connection failed ::",err);
-  
-})
+  .catch((err) => {
+    console.log("MONGO db connection failed ::", err);
+  });
 //const app = express();
 
 //listeners of express.
@@ -62,7 +59,7 @@ connectDB()
 // */
 
 //   // --> making it more professional
-//   // with IFFI concept to call it immediatly.
+//   // with IIFE concept to call it immediatly.
 
 //   //information about this connection making is in Notes.md to learn this.
 //   async () => {
