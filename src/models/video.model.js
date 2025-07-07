@@ -1,4 +1,5 @@
 import mongoose, { Mongoose } from "mongoose";
+import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const videoSchema = new mongoose.Schema(
   {
@@ -40,4 +41,7 @@ const videoSchema = new mongoose.Schema(
   }
 );
 
+videoSchema.plugin(mongooseAggregatePaginate); // now with help of this we can write the aggregate querries.
+// two bcrypts(core bcrypt, bcryptjs) - TODO(it helps to hash the password.)
+//  JWT - token generation.
 export const Video = mongoose.model("Video", videoSchema);
