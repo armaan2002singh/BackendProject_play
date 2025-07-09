@@ -1,3 +1,8 @@
+# Basic code
+
+### without any other configuration.
+
+```javascript
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -13,15 +18,13 @@ app.use(
 ); // it is used for all middlewares, cors -- TODO
 
 app.use(express.json({ limit: "16kb" }));
+//if data comes from the URL then -->
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
-app.use(express.static("public"));
-app.use(cookieParser());
+//these are difficult to handle but correct way to handle them is given above. "Extended is used for giving object into object."
 
-//routes
-import userRouter from "./routes/user.routes.js";
+app.use(express.static("public")); // is for sometime we want to store some files and folder then on that time, can access them.
 
-// declaration of routes.
-app.use("/api/v1/users", userRouter);
-//used app.use("ROUTE", method) - https://locahost:8000/api/v1/users
+app.use(cookieParser()); // can read from documentary.
 
 export default app;
+```
