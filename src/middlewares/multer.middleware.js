@@ -7,7 +7,7 @@ const storage = multer.diskStorage({
     //req is from user (in this can configure the json data, but not file. So, file is present of multer)
     // file(all file) is from multer
     // cb - just a callback
-    cb(null, "../public/temp");
+    cb(null, "public/temp");
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9); //unique value generator
