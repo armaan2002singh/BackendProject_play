@@ -55,7 +55,7 @@ const userSchema = new mongoose.Schema(
 userSchema.pre("save", async function (next) {
   //next is the flag of the middleware. if the work is done the next will be called ones.
   if (!this.isModified("password")) return next();
-  this.password = bcrypt.hash(this.password, 10); //will use hash(what to hash, and how many rounds)
+  this.password = await bcrypt.hash(this.password, 10); //will use hash(what to hash, and how many rounds)
   next();
 }); //before the data is going to save.
 //[NOTE-- we can use the arrow function in this code because in arrow function they do not have the context of this.] So, in this type of function that is required.
