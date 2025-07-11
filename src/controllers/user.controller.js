@@ -48,7 +48,6 @@ const registerUser = asyncHandler(async (req, res) => {
   if (!avatar) {
     throw new ApiError(400, "🔴 Avatar do not exist or find.");
   }
-
   const user = await User.create({
     fullName,
     avatar: avatar.url,
