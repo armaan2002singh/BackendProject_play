@@ -1,5 +1,7 @@
 # This is the file to write concepts.
 
+# video - 14(ts_30:17) for POST_MAN
+
 - well in react.js files are imported in two type keyword of package.json file
 
 1. module way - import

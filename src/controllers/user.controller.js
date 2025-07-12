@@ -38,9 +38,22 @@ const registerUser = asyncHandler(async (req, res) => {
   const avatarLocalPath = req.files?.avatar[0]?.path;
   const coverimageLocalPath = req.files?.coverImage[0]?.path;
 
+  // let coverimageLocalPath;
+  // console.log("🔴 coverimage do  exist or find.",req.files,req.files.coverImage[0]);
+  
+  //TEST-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  // if (
+  //   req.files &&
+  //   Array.isArray(req.files.coverImage) &&
+  //   req.files.coverImage.lenght > 0
+  // ) {
+  //   coverimageLocalPath = req.files.coverImage[0].path;
+  //   console.log("🔴 coverimage do  exist or find.", req.files.coverImage);
+  // }
+
   if (!avatarLocalPath)
     throw new ApiError(400, "🔴 Avatar do not exist or find.");
-  console.log(avatarLocalPath, coverimageLocalPath);
+  //console.log(avatarLocalPath, coverimageLocalPath);
 
   const avatar = await uploadOnCloudinary(avatarLocalPath); //wait till file will upload
   const coverimage = await uploadOnCloudinary(coverimageLocalPath); //wait till file will upload
@@ -51,7 +64,7 @@ const registerUser = asyncHandler(async (req, res) => {
   const user = await User.create({
     fullName,
     avatar: avatar.url,
-    coverImage: coverimage.url,
+    coverImage: coverimage?.url || "",
     email,
     password,
     username: username.toLowerCase(),
